@@ -13,11 +13,13 @@ public class Tank : MonoBehaviour
     private Rigidbody rb;
     private GameObject leftPortal, rightPortal, lastPortal;
     private bool teleportable = true;
+    private Vector3 portalCenter;
 
     private void Awake() {
         // get portals
         leftPortal = GameObject.Find("LeftPortal");
         rightPortal = GameObject.Find("RightPortal");
+        portalCenter = new Vector3(0, 0, 5);
     }
 
     void Start()
@@ -78,11 +80,11 @@ public class Tank : MonoBehaviour
         if (other.gameObject.tag == "Portal" && teleportable) {
             if (other.gameObject.name == "LeftPortal") {
                 // teleport to right portal
-                transform.position = rightPortal.transform.position;
+                transform.position = rightPortal.transform.position + portalCenter;
                 lastPortal = leftPortal;
             } else {
                 // teleport to left portal
-                transform.position = leftPortal.transform.position;
+                transform.position = leftPortal.transform.position + portalCenter;
                 lastPortal = rightPortal;
             }
             teleportable = false;

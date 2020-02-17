@@ -8,10 +8,12 @@ public class PortalPlacement : MonoBehaviour
     public GameObject portalPreview, leftPortal, rightPortal;
 
     private Vector3 clickPosition;
+    private Vector3 portalCenter;
 
     private void Start() {
         leftPortal.SetActive(false);
         rightPortal.SetActive(false);
+        portalCenter = new Vector3(0, 0, -5);
     }
 
     private void Update() {
@@ -29,20 +31,20 @@ public class PortalPlacement : MonoBehaviour
             clickPosition = hit.point;
         }
 
-        portalPreview.transform.position = clickPosition;
+        portalPreview.transform.position = clickPosition + portalCenter;
     }
 
     void placePortal() {
         if (Input.GetMouseButtonDown(0)) {
             // place left portal
             leftPortal.SetActive(true);
-            leftPortal.transform.position = clickPosition;
+            leftPortal.transform.position = clickPosition + portalCenter;
         }
 
         if (Input.GetMouseButtonDown(1)) {
             // place right portal
             rightPortal.SetActive(true);
-            rightPortal.transform.position = clickPosition;
+            rightPortal.transform.position = clickPosition + portalCenter;
         }
     }
 }
