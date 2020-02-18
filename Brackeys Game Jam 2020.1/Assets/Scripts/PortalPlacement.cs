@@ -14,6 +14,7 @@ public class PortalPlacement : MonoBehaviour
     private void Start() {
         leftPortal.SetActive(false);
         rightPortal.SetActive(false);
+        portalPreview.SetActive(false);
         portalCenter = new Vector3(0, 0, -5);
     }
 
