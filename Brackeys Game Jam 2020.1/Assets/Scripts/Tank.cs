@@ -8,6 +8,7 @@ public class Tank : MonoBehaviour
     public GameObject turret;
     public GameObject controller;
     public GameObject leftTrail, rightTrail;
+    public GameObject explosion;
     public float speed;
 
     private List<Vector3> waypoints;
@@ -124,6 +125,7 @@ public class Tank : MonoBehaviour
         if (collision.gameObject.tag == "Lethal") {
             controller.GetComponent<GameController>().Lose();
             allowedToDrive = false;
+            explosion.SetActive(true);
         }
     }
 

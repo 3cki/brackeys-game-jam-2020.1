@@ -11,22 +11,32 @@ public class GameController : MonoBehaviour
     private float time;
 
     public void Win() {
-        wonPanel.SetActive(true);
         portalPlacer.GetComponent<PortalPlacement>().allowedToPlace = false;
         time = timer.GetComponent<Timer>().time;
         Destroy(timer);
         timeShown.GetComponent<TextMeshProUGUI>().text = time.ToString() + "s";
-        Camera.main.enabled = false;
-        secondCamera.gameObject.SetActive(true);
-        secondCamera.enabled = true;
+        StartCoroutine(SwitchCameraWin());
     }
 
     public void Lose() {
-        lostPanel.SetActive(true);
         portalPlacer.GetComponent<PortalPlacement>().allowedToPlace = false;
         Destroy(timer);
+        StartCoroutine(SwitchCameraLose());
+    }
+
+    IEnumerator SwitchCameraWin() {
+        yield return new WaitForSeconds(1f);
         Camera.main.enabled = false;
         secondCamera.gameObject.SetActive(true);
         secondCamera.enabled = true;
+        wonPanel.SetActive(true);
+    }
+
+    IEnumerator SwitchCameraLose() {
+        yield return new WaitForSeconds(1f);
+        Camera.main.enabled = false;
+        secondCamera.gameObject.SetActive(true);
+        secondCamera.enabled = true;
+        lostPanel.SetActive(true);
     }
 }
