@@ -8,7 +8,7 @@ public class Tank : MonoBehaviour
     public GameObject turret;
     public GameObject controller;
     public GameObject leftTrail, rightTrail;
-    public GameObject explosion;
+    public GameObject explosion, fire;
     public float speed;
 
     private List<Vector3> waypoints;
@@ -72,9 +72,11 @@ public class Tank : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         // entering normal waypoint
         if (other.gameObject.tag == "Waypoint") {
-            currentWaypoint++;
-            if (currentWaypoint >= waypoints.Count)
-                currentWaypoint = 0;
+            if (other.gameObject.name == "Waypoint (" + (currentWaypoint + 1).ToString() + ")") {
+                currentWaypoint++;
+                if (currentWaypoint >= waypoints.Count)
+                    currentWaypoint = 0;
+            }
         }
 
         // entering last waypoint
@@ -126,6 +128,7 @@ public class Tank : MonoBehaviour
             controller.GetComponent<GameController>().Lose();
             allowedToDrive = false;
             explosion.SetActive(true);
+            fire.SetActive(true);
         }
     }
 
