@@ -6,6 +6,7 @@ public class PortalPlacement : MonoBehaviour
 {
     public LayerMask clickMask;
     public GameObject portalPreview, leftPortal, rightPortal;
+    public bool allowedToPlace = true;
 
     private Vector3 clickPosition;
     private Vector3 portalCenter;
@@ -17,8 +18,12 @@ public class PortalPlacement : MonoBehaviour
     }
 
     private void Update() {
-        positionPortalPreview();
-        placePortal();
+        if (allowedToPlace) {
+            positionPortalPreview();
+            placePortal();
+        } else {
+            portalPreview.SetActive(false);
+        }
     }
 
     void positionPortalPreview() {

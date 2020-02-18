@@ -6,6 +6,7 @@ public class Tank : MonoBehaviour
 {
     public GameObject track;
     public GameObject turret;
+    public GameObject controller;
     public float speed;
 
     private List<Vector3> waypoints;
@@ -14,6 +15,7 @@ public class Tank : MonoBehaviour
     private GameObject leftPortal, rightPortal, lastPortal;
     private bool teleportable = true;
     private Vector3 portalCenter;
+    private bool allowedToDrive = true;
 
     private void Awake() {
         // get portals
@@ -40,9 +42,11 @@ public class Tank : MonoBehaviour
 
     void FixedUpdate()
     {
-        LookAtWaypoint();
-        MoveTowardsWaypoint();
-        TurretLookAtWaypoint();
+        if (allowedToDrive) {
+            LookAtWaypoint();
+            MoveTowardsWaypoint();
+            TurretLookAtWaypoint();
+        }
     }
 
     void LookAtWaypoint() {
@@ -73,7 +77,8 @@ public class Tank : MonoBehaviour
 
         // entering last waypoint
         if (other.gameObject.tag == "FinalWaypoint") {
-            // TODO: Won game
+            controller.GetComponent<GameController>().Win();
+            allowedToDrive = false;
         }
 
         // entering portal
