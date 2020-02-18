@@ -1,4 +1,5 @@
-# My submission to Brackeys Game Jam 2020.1
+# Wormhole Warfare
+
 undercomment's submission to Brackeys Game Jam 2020.1
 
 https://undercomment.com/ </br>
