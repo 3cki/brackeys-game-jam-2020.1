@@ -84,22 +84,33 @@ public class Tank : MonoBehaviour
 
         // entering portal
         if (other.gameObject.tag == "Portal" && teleportable) {
-            // disable trail
-            leftTrail.GetComponent<TrailRenderer>().emitting = false;
-            rightTrail.GetComponent<TrailRenderer>().emitting = false;
-
             if (other.gameObject.name == "LeftPortal") {
                 // teleport to right portal
-                lastPortal = leftPortal;
-                allowedToDrive = false;
-                StartCoroutine(Teleport(rightPortal.transform.position));
+                if (rightPortal.activeSelf) {
+                    // disable trail
+                    leftTrail.GetComponent<TrailRenderer>().emitting = false;
+                    rightTrail.GetComponent<TrailRenderer>().emitting = false;
+
+                    lastPortal = leftPortal;
+                    allowedToDrive = false;
+                    StartCoroutine(Teleport(rightPortal.transform.position));
+
+                    teleportable = false;
+                }
             } else {
                 // teleport to left portal
-                lastPortal = rightPortal;
-                allowedToDrive = false;
-                StartCoroutine(Teleport(leftPortal.transform.position));
+                if (leftPortal.activeSelf) {
+                    // disable trail
+                    leftTrail.GetComponent<TrailRenderer>().emitting = false;
+                    rightTrail.GetComponent<TrailRenderer>().emitting = false;
+
+                    lastPortal = rightPortal;
+                    allowedToDrive = false;
+                    StartCoroutine(Teleport(leftPortal.transform.position));
+
+                    teleportable = false;
+                }
             }
-            teleportable = false;
         }
     }
 

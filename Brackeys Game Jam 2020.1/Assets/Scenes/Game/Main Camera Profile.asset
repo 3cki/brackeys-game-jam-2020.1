@@ -18,7 +18,7 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: {x: 1, y: 1, z: 1, w: 0.61440676}
   midtones:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {x: 0.9994193, y: 1, z: 0.98985463, w: 0.04237288}
   highlights:
     m_OverrideState: 1
@@ -175,7 +175,7 @@ MonoBehaviour:
     m_Value: 1
   focusDistance:
     m_OverrideState: 1
-    m_Value: 25
+    m_Value: 47
     min: 0.1
   nearFocusStart:
     m_OverrideState: 0
@@ -240,6 +240,7 @@ MonoBehaviour:
   - {fileID: 2261649867682368786}
   - {fileID: -4618196330189383291}
   - {fileID: 6289025483868593475}
+  - {fileID: 4589806258748857328}
 --- !u!114 &1875980914322562772
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -273,16 +274,16 @@ MonoBehaviour:
     max: 1
   tint:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 1, g: 0.96719414, b: 0.7688679, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
   dirtTexture:
-    m_OverrideState: 0
-    m_Value: {fileID: 0}
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: 7ce20bd365f1deb44ba37c8291717652, type: 3}
   dirtIntensity:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
     min: 0
   anamorphic:
     m_OverrideState: 0
@@ -437,6 +438,43 @@ MonoBehaviour:
     m_Value: 2
     min: 1
     max: 6
+--- !u!114 &4589806258748857328
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1bfcd0f0fa7b8468f281d6bbbaf320, type: 3}
+  m_Name: LensDistortion
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  intensity:
+    m_OverrideState: 1
+    m_Value: -0.18
+    min: -1
+    max: 1
+  xMultiplier:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  yMultiplier:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  center:
+    m_OverrideState: 1
+    m_Value: {x: 0.5, y: 0.5}
+  scale:
+    m_OverrideState: 1
+    m_Value: 1.08
+    min: 0.01
+    max: 5
 --- !u!114 &6289025483868593475
 MonoBehaviour:
   m_ObjectHideFlags: 3
