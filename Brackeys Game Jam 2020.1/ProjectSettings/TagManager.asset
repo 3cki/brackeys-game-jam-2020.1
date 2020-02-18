@@ -7,6 +7,7 @@ TagManager:
   - Waypoint
   - FinalWaypoint
   - Portal
+  - Lethal
   layers:
   - Default
   - TransparentFX

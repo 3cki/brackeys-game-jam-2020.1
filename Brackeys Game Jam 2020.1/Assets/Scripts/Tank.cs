@@ -7,6 +7,7 @@ public class Tank : MonoBehaviour
     public GameObject track;
     public GameObject turret;
     public GameObject controller;
+    public GameObject leftTrail, rightTrail;
     public float speed;
 
     private List<Vector3> waypoints;
@@ -83,23 +84,48 @@ public class Tank : MonoBehaviour
 
         // entering portal
         if (other.gameObject.tag == "Portal" && teleportable) {
+            // disable trail
+            leftTrail.GetComponent<TrailRenderer>().emitting = false;
+            rightTrail.GetComponent<TrailRenderer>().emitting = false;
+
             if (other.gameObject.name == "LeftPortal") {
                 // teleport to right portal
-                transform.position = rightPortal.transform.position + portalCenter;
                 lastPortal = leftPortal;
+                allowedToDrive = false;
+                StartCoroutine(Teleport(rightPortal.transform.position));
             } else {
                 // teleport to left portal
-                transform.position = leftPortal.transform.position + portalCenter;
                 lastPortal = rightPortal;
+                allowedToDrive = false;
+                StartCoroutine(Teleport(leftPortal.transform.position));
             }
             teleportable = false;
         }
     }
 
+    IEnumerator Teleport(Vector3 teleportPosition) {
+        yield return new WaitForSeconds(0.1f);
+        transform.position = teleportPosition + portalCenter;
+        allowedToDrive = true;
+    }
+
+    private void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.tag == "Lethal") {
+            controller.GetComponent<GameController>().Lose();
+            allowedToDrive = false;
+        }
+    }
+
     private void OnTriggerExit(Collider other) {
-        if (other.gameObject.name == "LeftPortal" && lastPortal == rightPortal)
+        if (other.gameObject.name == "LeftPortal" && lastPortal == rightPortal) {
             teleportable = true;
-        if (other.gameObject.name == "RightPortal" && lastPortal == leftPortal)
+            leftTrail.GetComponent<TrailRenderer>().emitting = true;
+            rightTrail.GetComponent<TrailRenderer>().emitting = true;
+        }
+        if (other.gameObject.name == "RightPortal" && lastPortal == leftPortal) {
             teleportable = true;
+            leftTrail.GetComponent<TrailRenderer>().emitting = true;
+            rightTrail.GetComponent<TrailRenderer>().emitting = true;
+        }
     }
 }

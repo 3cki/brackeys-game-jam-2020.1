@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject wonPanel, portalPlacer;
+    public GameObject wonPanel, lostPanel, portalPlacer;
 
     public void Win() {
         wonPanel.SetActive(true);
@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     }
 
     public void Lose() {
-
+        lostPanel.SetActive(true);
+        portalPlacer.GetComponent<PortalPlacement>().allowedToPlace = false;
     }
 }
