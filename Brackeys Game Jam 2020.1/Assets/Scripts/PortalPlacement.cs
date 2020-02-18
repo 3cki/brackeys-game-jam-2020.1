@@ -19,6 +19,7 @@ public class PortalPlacement : MonoBehaviour
 
     private void Update() {
         if (allowedToPlace) {
+            portalPreview.SetActive(true);
             positionPortalPreview();
             placePortal();
         } else {

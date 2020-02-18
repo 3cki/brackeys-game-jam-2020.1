@@ -13,11 +13,11 @@ public class Tank : MonoBehaviour
 
     private List<Vector3> waypoints;
     private int currentWaypoint;
-    private Rigidbody rb;
+    public Rigidbody rb;
     private GameObject leftPortal, rightPortal, lastPortal;
     private bool teleportable = true;
     private Vector3 portalCenter;
-    private bool allowedToDrive = true;
+    public bool allowedToDrive = true;
 
     private void Awake() {
         // get portals
@@ -80,7 +80,7 @@ public class Tank : MonoBehaviour
         }
 
         // entering last waypoint
-        if (other.gameObject.tag == "FinalWaypoint") {
+        if (other.gameObject.tag == "FinalWaypoint" && currentWaypoint == waypoints.Count - 1) {
             controller.GetComponent<GameController>().Win();
             allowedToDrive = false;
         }

@@ -6,10 +6,12 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     public float time = 0;
-
+    public bool timing = true;
     void Update()
     {
-        time += Time.deltaTime;
-        this.GetComponent<TextMeshProUGUI>().text = time.ToString();
+        if (timing) {
+            time += Time.deltaTime;
+            this.GetComponent<TextMeshProUGUI>().text = time.ToString();
+        }
     }
 }
