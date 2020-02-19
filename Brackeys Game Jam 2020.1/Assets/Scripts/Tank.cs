@@ -91,6 +91,7 @@ public class Tank : MonoBehaviour
 
         // entering portal
         if (other.gameObject.tag == "Portal" && teleportable) {
+            Camera.main.GetComponent<AudioSource>().Play();
             if (other.gameObject.name == "LeftPortal") {
                 // teleport to right portal
                 if (rightPortal.activeSelf) {
@@ -136,6 +137,7 @@ public class Tank : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         transform.position = teleportPosition + portalCenter;
         allowedToDrive = true;
+        Camera.main.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(0.2f);
         allowedToSwitchTeleportable = true;
     }
