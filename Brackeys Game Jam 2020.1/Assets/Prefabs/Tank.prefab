@@ -249,8 +249,9 @@ GameObject:
   - component: {fileID: 4417281265440085863}
   - component: {fileID: 4417281265440085860}
   - component: {fileID: 4417281265440085861}
+  - component: {fileID: 1689693975955039921}
   m_Layer: 0
-  m_Name: Mini War Tank Green
+  m_Name: Tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -319,7 +320,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   track: {fileID: 0}
   turret: {fileID: 4417706230603671222}
+  controller: {fileID: 0}
+  leftTrail: {fileID: 0}
+  rightTrail: {fileID: 0}
+  explosion: {fileID: 0}
+  fire: {fileID: 0}
   speed: 10
+  rb: {fileID: 0}
+  allowedToDrive: 1
+--- !u!95 &1689693975955039921
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4417706231337513312}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ef8e10fa26a6ab34c87f48f4f39306ab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4417706232962884512
 GameObject:
   m_ObjectHideFlags: 0

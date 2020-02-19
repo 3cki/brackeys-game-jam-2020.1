@@ -16,6 +16,7 @@ public class Tank : MonoBehaviour
     public Rigidbody rb;
     private GameObject leftPortal, rightPortal, lastPortal;
     private bool teleportable = true;
+    private bool allowedToSwitchTeleportable = true;
     private Vector3 portalCenter;
     public bool allowedToDrive = true;
 
@@ -117,10 +118,23 @@ public class Tank : MonoBehaviour
         }
     }
 
+    public void StartAnim() {
+        allowedToSwitchTeleportable = false;
+    }
+
+    public void FinishedAnim() {
+        GetComponent<Animator>().SetBool("Teleporting", false);
+        allowedToSwitchTeleportable = true;
+    }
+
     IEnumerator Teleport(Vector3 teleportPosition) {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
+        GetComponent<Animator>().SetBool("Teleporting", true);
+        yield return new WaitForSeconds(0.2f);
         transform.position = teleportPosition + portalCenter;
         allowedToDrive = true;
+        yield return new WaitForSeconds(0.2f);
+        allowedToSwitchTeleportable = true;
     }
 
     private void OnCollisionEnter(Collision collision) {
@@ -129,16 +143,17 @@ public class Tank : MonoBehaviour
             allowedToDrive = false;
             explosion.SetActive(true);
             fire.SetActive(true);
+            GetComponent<Animator>().enabled = false;
         }
     }
 
     private void OnTriggerExit(Collider other) {
-        if (other.gameObject.name == "LeftPortal" && lastPortal == rightPortal) {
+        if (other.gameObject.name == "LeftPortal" && lastPortal == rightPortal && allowedToSwitchTeleportable) {
             teleportable = true;
             leftTrail.GetComponent<TrailRenderer>().emitting = true;
             rightTrail.GetComponent<TrailRenderer>().emitting = true;
         }
-        if (other.gameObject.name == "RightPortal" && lastPortal == leftPortal) {
+        if (other.gameObject.name == "RightPortal" && lastPortal == leftPortal && allowedToSwitchTeleportable) {
             teleportable = true;
             leftTrail.GetComponent<TrailRenderer>().emitting = true;
             rightTrail.GetComponent<TrailRenderer>().emitting = true;
