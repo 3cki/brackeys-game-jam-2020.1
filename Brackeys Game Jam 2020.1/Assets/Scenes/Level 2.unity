@@ -6293,6 +6293,11 @@ PrefabInstance:
       propertyPath: start
       value: 
       objectReference: {fileID: 8300000, guid: 00a5c6559d1286a40878e55fd6a53193, type: 3}
+    - target: {fileID: 4417281265440085861, guid: bf4ba5fce14f55243a294f42c36896b6,
+        type: 3}
+      propertyPath: explosionSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c2668fafc525a694fa54efca92b0bddf, type: 3}
     - target: {fileID: 4417281265440085863, guid: bf4ba5fce14f55243a294f42c36896b6,
         type: 3}
       propertyPath: m_Constraints
@@ -7585,7 +7590,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 7.47e-43, y: -0.000000015138042, z: 7.47e-43, w: 0}
+  m_BoundingSphereOverride: {x: 7.45e-43, y: -0.000000007956139, z: 7.47e-43, w: 9.4e-44}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0

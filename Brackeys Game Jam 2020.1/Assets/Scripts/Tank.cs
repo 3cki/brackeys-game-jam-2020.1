@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tank : MonoBehaviour
 {
-    public AudioClip start, loop;
+    public AudioClip start, loop, explosionSound;
 
     public GameObject track;
     public GameObject turret;
@@ -144,6 +144,9 @@ public class Tank : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag == "Lethal") {
+            GetComponent<AudioSource>().clip = explosionSound;
+            GetComponent<AudioSource>().loop = false;
+            GetComponent<AudioSource>().Play();
             controller.GetComponent<GameController>().Lose();
             allowedToDrive = false;
             explosion.SetActive(true);

@@ -6238,6 +6238,11 @@ PrefabInstance:
       propertyPath: loop
       value: 
       objectReference: {fileID: 8300000, guid: d851a30dcf1b8dc48bb3251c2ebae4e0, type: 3}
+    - target: {fileID: 4417281265440085861, guid: bf4ba5fce14f55243a294f42c36896b6,
+        type: 3}
+      propertyPath: explosionSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c2668fafc525a694fa54efca92b0bddf, type: 3}
     - target: {fileID: 4417281265440085863, guid: bf4ba5fce14f55243a294f42c36896b6,
         type: 3}
       propertyPath: m_Constraints
@@ -6920,7 +6925,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: -0.0000000036005368}
+  m_BoundingSphereOverride: {x: 7.47e-43, y: -3.3978487e-32, z: 7.45e-43, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -25801,7 +25806,7 @@ GameObject:
   - component: {fileID: 1977418504}
   m_Layer: 0
   m_Name: SoundManager
-  m_TagString: Untagged
+  m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
