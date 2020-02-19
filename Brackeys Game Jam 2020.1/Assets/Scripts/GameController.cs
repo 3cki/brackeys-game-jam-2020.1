@@ -25,8 +25,12 @@ public class GameController : MonoBehaviour
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Space) && pausable) {
+            tank.GetComponent<AudioSource>().clip = tank.GetComponent<Tank>().start;
+            tank.GetComponent<AudioSource>().loop = false;
+            tank.GetComponent<AudioSource>().Play();
             tank.GetComponent<Tank>().allowedToDrive = !tank.GetComponent<Tank>().allowedToDrive;
             timer.GetComponent<Timer>().timing = !timer.GetComponent<Timer>().timing;
+            StartCoroutine(SwitchTankSound());
             pauseScreen.SetActive(false);
             if (!tank.GetComponent<Tank>().allowedToDrive) {
                 tank.GetComponent<Tank>().rb.velocity = Vector3.zero;
@@ -35,6 +39,13 @@ public class GameController : MonoBehaviour
             portalPlacer.GetComponent<PortalPlacement>().allowedToPlace = true;
             pausable = false;
         }
+    }
+
+    IEnumerator SwitchTankSound() {
+        yield return new WaitForSeconds(0.9f);
+        tank.GetComponent<AudioSource>().clip = tank.GetComponent<Tank>().loop;
+        tank.GetComponent<AudioSource>().loop = true;
+        tank.GetComponent<AudioSource>().Play();
     }
 
     public void Win() {

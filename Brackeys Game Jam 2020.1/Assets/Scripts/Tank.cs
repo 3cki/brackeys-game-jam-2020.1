@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Tank : MonoBehaviour
 {
+    public AudioClip start, loop;
+
     public GameObject track;
     public GameObject turret;
     public GameObject controller;
@@ -83,6 +85,7 @@ public class Tank : MonoBehaviour
         // entering last waypoint
         if (other.gameObject.tag == "FinalWaypoint" && currentWaypoint == waypoints.Count - 1) {
             controller.GetComponent<GameController>().Win();
+            GetComponent<Animator>().enabled = false;
             allowedToDrive = false;
         }
 
