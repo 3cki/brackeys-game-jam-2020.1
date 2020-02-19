@@ -10,7 +10,7 @@ public class ButtonManager : MonoBehaviour
     }
 
     public void MainMenu() {
-
+        SceneManager.LoadScene("Menu");
     }
 
     public void NextLevel() {

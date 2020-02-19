@@ -6803,7 +6803,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 2.3509887e-38, w: 0.000000019630917}
+  m_BoundingSphereOverride: {x: 6.12e-43, y: 0, z: 0, w: NaN}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -8280,7 +8280,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: b63d1cf1f0768c546b1534d1407e872f, type: 2}
+  sharedProfile: {fileID: 11400000, guid: b471e17efc3c3504e8716d64c75eebe6, type: 2}
 --- !u!1 &1056922124
 GameObject:
   m_ObjectHideFlags: 0
