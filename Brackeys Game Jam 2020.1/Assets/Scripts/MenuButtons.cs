@@ -10,7 +10,7 @@ public class MenuButtons : MonoBehaviour
     }
 
     public void Credits() {
-
+        SceneManager.LoadScene("Credits");
     }
 
     public void QuitGame() {

@@ -6127,6 +6127,11 @@ PrefabInstance:
       propertyPath: speed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4417281265440085861, guid: bf4ba5fce14f55243a294f42c36896b6,
+        type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 351047773}
     - target: {fileID: 4417281265440085863, guid: bf4ba5fce14f55243a294f42c36896b6,
         type: 3}
       propertyPath: m_Constraints
@@ -6144,6 +6149,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf4ba5fce14f55243a294f42c36896b6, type: 3}
+--- !u!54 &351047773 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 4417281265440085863, guid: bf4ba5fce14f55243a294f42c36896b6,
+    type: 3}
+  m_PrefabInstance: {fileID: 351047772}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &361871364
 GameObject:
   m_ObjectHideFlags: 0
@@ -25773,7 +25784,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: b471e17efc3c3504e8716d64c75eebe6, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 2cf92c232f1842b43885c073fc3fc714, type: 2}
 --- !u!114 &2000369615
 MonoBehaviour:
   m_ObjectHideFlags: 0
