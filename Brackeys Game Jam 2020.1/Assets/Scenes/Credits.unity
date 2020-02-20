@@ -467,7 +467,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1189.09}
+  m_AnchoredPosition: {x: 0, y: -1237}
   m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &94025384
@@ -508,7 +508,13 @@ MonoBehaviour:
 
 
     "Huge
-    Explosion Part 3 - Long Crash" by benjaminharveydesign https://freesound.org/people/benjaminharveydesign/sounds/366086/'
+    Explosion Part 3 - Long Crash" by benjaminharveydesign https://freesound.org/people/benjaminharveydesign/sounds/366086/
+
+
+    "swoosh
+    plastik" by sacred_steel
+
+    https://freesound.org/people/sacred_steel/sounds/434094/'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b3edbee4f6362e142853d2d5e717e860, type: 2}
   m_sharedMaterial: {fileID: -6708485083183926887, guid: b3edbee4f6362e142853d2d5e717e860,
@@ -578,12 +584,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: -41.628834}
   m_textInfo:
     textComponent: {fileID: 94025384}
-    characterCount: 486
+    characterCount: 577
     spriteCount: 0
-    spaceCount: 55
-    wordCount: 72
+    spaceCount: 61
+    wordCount: 85
     linkCount: 0
-    lineCount: 12
+    lineCount: 15
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -2400,7 +2406,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 159.99998, y: -1764}
+  m_AnchoredPosition: {x: 159.99998, y: -1863}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1404167107
@@ -2556,7 +2562,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1581.1963}
+  m_AnchoredPosition: {x: 0, y: -1680.1963}
   m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1618239599
@@ -2983,7 +2989,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1610}
+  m_AnchoredPosition: {x: 0, y: 1703}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1765100762
@@ -3051,7 +3057,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 271, y: -1793}
+  m_AnchoredPosition: {x: 271, y: -1892}
   m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1870148418
@@ -3207,7 +3213,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 30, y: -1755}
+  m_AnchoredPosition: {x: 30, y: -1854}
   m_SizeDelta: {x: 1200, y: 976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2020521961
