@@ -21,6 +21,7 @@ public class Tank : MonoBehaviour
     private bool allowedToSwitchTeleportable = true;
     private Vector3 portalCenter;
     public bool allowedToDrive = true;
+    public bool finished = false;
 
     private void Awake() {
         // get portals
@@ -38,7 +39,7 @@ public class Tank : MonoBehaviour
         waypoints = new List<Vector3>();
 
         foreach (Transform child in track.transform) {
-            waypoints.Add(new Vector3(child.position.x, transform.position.y, child.position.z));
+            waypoints.Add(new Vector3(child.position.x, child.position.y, child.position.z));
         }
 
         // get rigidbody
@@ -57,6 +58,7 @@ public class Tank : MonoBehaviour
 
     void LookAtWaypoint() {
         Vector3 targetDirection = waypoints[currentWaypoint] - transform.position;
+        targetDirection = new Vector3(targetDirection.x, 0, targetDirection.z);
         float singleStep = speed * Time.deltaTime / 10;
         Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
         transform.rotation = Quaternion.LookRotation(newDirection);
@@ -85,8 +87,10 @@ public class Tank : MonoBehaviour
 
         // entering last waypoint
         if (other.gameObject.tag == "FinalWaypoint" && currentWaypoint == waypoints.Count - 1) {
-            controller.GetComponent<GameController>().Win();
+            /*controller.GetComponent<GameController>().Win();
             GetComponent<Animator>().enabled = false;
+            allowedToDrive = false;*/
+            finished = true;
             allowedToDrive = false;
         }
 
@@ -144,7 +148,7 @@ public class Tank : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.tag == "Lethal") {
+        if (collision.gameObject.tag == "Lethal" || collision.gameObject.tag == "Tank") {
             GetComponent<AudioSource>().clip = explosionSound;
             GetComponent<AudioSource>().loop = false;
             GetComponent<AudioSource>().Play();

@@ -9,6 +9,7 @@ TagManager:
   - Portal
   - Lethal
   - Sound
+  - Tank
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 
   - Ground
   - No VFX
-  - 
+  - Tank
   - 
   - 
   - 

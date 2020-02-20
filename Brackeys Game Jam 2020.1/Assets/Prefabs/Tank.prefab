@@ -183,7 +183,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2000369613}
   - component: {fileID: 2000369617}
-  - component: {fileID: 2000369616}
   - component: {fileID: 2000369615}
   - component: {fileID: 2000369614}
   m_Layer: 0
@@ -250,14 +249,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &2000369616
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000369612}
-  m_Enabled: 1
 --- !u!114 &2000369615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -758,9 +749,9 @@ GameObject:
   - component: {fileID: 4417281265440085861}
   - component: {fileID: 1689693975955039921}
   - component: {fileID: 268932631}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tank
-  m_TagString: Untagged
+  m_TagString: Tank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -846,6 +837,7 @@ MonoBehaviour:
   speed: 10
   rb: {fileID: 4417281265440085863}
   allowedToDrive: 1
+  finished: 0
 --- !u!95 &1689693975955039921
 Animator:
   serializedVersion: 3
@@ -877,13 +869,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a427869bd5205114a9281c0d1e1f2144, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 200
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1466,15 +1458,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079954accd64b32419ec069129c81273, type: 3}
---- !u!4 &2035171562 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 402300, guid: 079954accd64b32419ec069129c81273,
-    type: 3}
-  m_PrefabInstance: {fileID: 2034787222}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2034927940 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 191186, guid: 079954accd64b32419ec069129c81273,
+    type: 3}
+  m_PrefabInstance: {fileID: 2034787222}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2035171562 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 402300, guid: 079954accd64b32419ec069129c81273,
     type: 3}
   m_PrefabInstance: {fileID: 2034787222}
   m_PrefabAsset: {fileID: 0}
