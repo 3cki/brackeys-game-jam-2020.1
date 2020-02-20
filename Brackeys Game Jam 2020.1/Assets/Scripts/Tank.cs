@@ -43,6 +43,7 @@ public class Tank : MonoBehaviour
 
         // get rigidbody
         rb = GetComponent<Rigidbody>();
+        GetComponent<AudioSource>().enabled = true;
     }
 
     void FixedUpdate()

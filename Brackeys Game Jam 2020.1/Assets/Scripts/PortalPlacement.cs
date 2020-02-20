@@ -45,12 +45,16 @@ public class PortalPlacement : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) {
             // place left portal
             leftPortal.SetActive(true);
+            leftPortal.GetComponent<AudioSource>().Play();
+            leftPortal.GetComponent<Animator>().Play(0);
             leftPortal.transform.position = clickPosition + portalCenter;
         }
 
         if (Input.GetMouseButtonDown(1)) {
             // place right portal
             rightPortal.SetActive(true);
+            rightPortal.GetComponent<AudioSource>().Play();
+            rightPortal.GetComponent<Animator>().Play(0);
             rightPortal.transform.position = clickPosition + portalCenter;
         }
     }
