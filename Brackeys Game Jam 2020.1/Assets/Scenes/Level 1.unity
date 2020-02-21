@@ -1219,6 +1219,10 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 268932631, guid: bf4ba5fce14f55243a294f42c36896b6, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4414477702540176494, guid: bf4ba5fce14f55243a294f42c36896b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1759,7 +1763,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 3e-42, y: 1.04e-43, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 1.189e-41, y: 1.04e-43, z: 7.1518455e+22, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0

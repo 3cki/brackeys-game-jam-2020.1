@@ -78,7 +78,7 @@ public class Tank : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         // entering normal waypoint
         if (other.gameObject.tag == "Waypoint") {
-            if (other.gameObject.name == "Waypoint (" + (currentWaypoint + 1).ToString() + ")") {
+            if (other.gameObject.name == "Waypoint (" + (currentWaypoint + 1).ToString() + ")" && other.gameObject.transform.parent == track.transform) {
                 currentWaypoint++;
                 if (currentWaypoint >= waypoints.Count)
                     currentWaypoint = 0;
