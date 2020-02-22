@@ -95,7 +95,7 @@ public class Tank : MonoBehaviour
         }
 
         // entering portal
-        if (other.gameObject.tag == "Portal" && teleportable) {
+        if (other.gameObject.tag == "Portal" && teleportable && !finished) {
             Camera.main.GetComponent<AudioSource>().Play();
             if (other.gameObject.name == "LeftPortal") {
                 // teleport to right portal
